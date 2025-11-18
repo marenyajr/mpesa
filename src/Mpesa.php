@@ -162,6 +162,7 @@ class Mpesa
         $url = $this->url . '/mpesa/b2c/v1/paymentrequest';
 
         $body = [
+            'OriginatorConversationID' => uniqid(),
             'InitiatorName' => $this->initiator_name,
             'SecurityCredential' => $this->security_credential,
             'CommandID' => $command_id, //can be SalaryPayment,BusinessPayment or PromotionPayment
@@ -197,6 +198,7 @@ class Mpesa
     {
         $url = $this->url . '/mpesa/b2cvalidate/v2/paymentrequest';
         $body = [
+            'OriginatorConversationID' => uniqid(),
             'InitiatorName' => $this->initiator_name,
             'SecurityCredential' => $this->security_credential,
             'CommandID' => $command_id, //can be SalaryPayment,BusinessPayment or PromotionPayment
