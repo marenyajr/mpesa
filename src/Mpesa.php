@@ -170,6 +170,7 @@ class Mpesa
             'PartyB' => $this->phoneValidator($phonenumber),
             'Remarks' => $remarks,
             'Occassion' => '', //can be null
+            'OriginatorConversationID' => $this->getFormattedTimeStamp(),
             'ResultURL' => $this->resolveCallbackUrl($result_url, 'b2c_result_url', 'b2c_result_url'),
             'QueueTimeOutURL' => $this->resolveCallbackUrl($timeout_url, 'b2c_timeout_url', 'b2c_timeout_url'),
         ];
